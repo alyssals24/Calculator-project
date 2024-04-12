@@ -1,72 +1,72 @@
-let currentinput = [];
+let currentinput = '';
 let currentsentence = document.createElement('p');
 function input1() {
-    currentinput.push(1);
+    currentinput = currentinput + '1';
     updatesentence();
 }
 
 function input2() {
-    currentinput.push(2);
+    currentinput = currentinput + '2';
     updatesentence();
 }
 
 function input3() {
-    currentinput.push(3);
+    currentinput = currentinput + '3';
     updatesentence();
 }
 
 function input4() {
-    currentinput.push(4);
+    currentinput = currentinput + '4';
     updatesentence();
 }
 
 function input5() {
-    currentinput.push(5);
+    currentinput = currentinput + '5';
     updatesentence();
 }
 
 function input6() {
-    currentinput.push(6);
+    currentinput = currentinput + '6';
     updatesentence();
 }
 
 function input7() {
-    currentinput.push(7);
+    currentinput = currentinput + '7';
     updatesentence();
 }
 
 function input8() {
-    currentinput.push(8);
+    currentinput = currentinput + '8';
     updatesentence();
 }
 
 function input9() {
-    currentinput.push(9);
+    currentinput = currentinput + '9';
     updatesentence();
 }
 
 function input0() {
-    currentinput.push(0);
+    currentinput = currentinput + '0';
     updatesentence();
 }
 
 function inputplus() {
-    currentinput.push('+');
+    currentinput = currentinput + '+';
     updatesentence();
 }
 
 function inputminus() {
-    currentinput.push('-');
+    currentinput = currentinput + '-';
     updatesentence();
 }
 
 function inputtimes() {
-    currentinput.push('x');
+    currentinput = currentinput + '*';
     updatesentence();
 }
 
 function inputdivide() {
-    currentinput.push('/');
+    currentinput = currentinput + '/';
     updatesentence();
 }
 
@@ -85,16 +85,15 @@ function clear() {
 
 function inputequal() {
     let answer = currentinput[0];
-    if (currentinput.length == 3) {
-        answer = calculateanswer();
-    }
+    console.log(currentinput);
+    answer = calculateanswer();
     const answerpara = document.createElement('p');
     answerpara.innerHTML = '= ' + answer.toString();
     //answerpara.setAttribute("font-size", "24");
     //answerpara.setAttribute("font-weight", "bold");
     //answerpara.setAttribute("text-align", "center");
     document.getElementById('numberoutput').appendChild(answerpara);
-    currentinput = [];
+    currentinput = '';
 
 }
 
@@ -109,6 +108,8 @@ function calculateanswer() {
     } else {
         answer = currentinput[0] / currentinput[2];
     }
+    answer = math.evaluate(currentinput);
+    console.log(answer);
     return answer;
 }
 
@@ -119,7 +120,11 @@ function updatesentence() {
         numout.removeChild(numout.firstChild);
     }
     for (let i = 0; i < currentinput.length; i++) {
-        sentence = sentence + currentinput[i] + ' ';
+        if (currentinput[i] == '*') {
+            sentence = sentence + 'X '
+        } else {
+            sentence = sentence + currentinput[i] + ' ';
+        }
     }
     currentsentence.innerHTML = sentence;
     numout.appendChild(currentsentence);
