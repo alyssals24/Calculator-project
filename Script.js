@@ -74,12 +74,12 @@ function updateDisplay(value) {
     document.getElementById("numberoutput")
 }
 function deleteprev() {
-    currentinput.pop();
+    currentinput = currentinput.slice(0,-1);
     updatesentence();
 }
 
-function clear() {
-    currentinput = [];
+function clearnum() {
+    currentinput = '';
     updatesentence();
 }
 
