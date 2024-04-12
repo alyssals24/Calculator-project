@@ -1,0 +1,44 @@
+﻿<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <title>Calculator app</title>
+    <link href="Styles.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="icon" href="icons8-calculator-48.png">
+</head>
+<body>
+    <section id="numberoutput">
+        <p class="number-text">This is where the numbers will appear.</p>
+    </section>
+    <main>
+        <div class="grid-container">
+            <!--<input type="button" class="grid-item grid-item-hover" value="1"/>-->
+            <button type="button" class="grid-item" onclick="input1()">1</button>
+            <button type="button" class="grid-item" onclick="input2()">2</button>
+            <button type="button" class="grid-item" onclick="input3()">3</button>
+            <button type="button" class="grid-item" onclick="input4()">4</button>
+            <button type="button" class="grid-item" onclick="input5()">5</button>
+            <button type="button" class="grid-item" onclick="input6()">6</button>
+            <button type="button" class="grid-item" onclick="input7()">7</button>
+            <button type="button" class="grid-item" onclick="input8()">8</button>
+            <button type="button" class="grid-item" onclick="input9()">9</button>
+            <button type="button" class="grid-item" onclick="input0()">0</button>
+        </div>
+        <div class="grid-container2">
+            <button type="button" class="grid-item" onclick="inputplus()">+</button>
+            <button type="button" class="grid-item" onclick="inputminus()">-</button>
+            <button type="button" class="grid-item" onclick="inputtimes()">x</button>
+            <button type="button" class="grid-item" onclick="inputdivide()">/</button>
+            <!--<button type="button" class="grid-item" onclick="deleteprev()">DEL</button>-->
+            <button type="button" class="grid-item" onclick="clear()">CLR</button>
+            <button type="button" class="grid-item" onclick="inputequal()">=</button>
+        </div>
+    </main>
+    <footer>
+        <a target="_blank" href="https://icons8.com/icon/qrOXrfUDKkOX/calculator">Calculator</a> icon by <a target="_blank" href="https://icons8.com">Icons8</a>
+    </footer>
+    <script src="Script.js"></script>
+</body>
+</html>

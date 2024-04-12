@@ -1,0 +1,16 @@
+link for calculator icon: <a target="_blank" href="https://icons8.com/icon/qrOXrfUDKkOX/calculator">Calculator</a> icon by <a target="_blank" href="https://icons8.com">Icons8</a>
+
+To Do:
+1. Calculator UI
+2. Implement functions for calculator
+
+What works so far:
+Single digit calculation
+Adding, Subtracting, Multipling, and Division all work
+Delete button works
+Very simple equations involving two single digit numbers (e.g. 7 + 8)
+
+What doesn't work:
+Calulating any numbers with two digits or more
+Clear button doesn't work
+Calucating more complicated equations (e.g. 78 + 2 x 4)

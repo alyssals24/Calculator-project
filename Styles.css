@@ -1,0 +1,63 @@
+﻿body
+{
+    min-height: 10vh;
+}
+
+main{
+    padding: 10px;
+}
+
+section{
+    padding: 20px;
+    text-align: right;
+    font-size: 24px;
+    background-color: grey;
+}
+
+footer{
+    padding: 10px;
+    float: left;
+    margin-top: auto;
+    position: fixed;
+    bottom: 0;
+}
+
+button {
+    background-color: rgba(255, 255, 255, 0.8);
+    border: 1px solid rgba(0, 0, 0, 0.8);
+    padding: 20px;
+    font-size: 30px;
+    text-align: center;
+}
+
+.grid-container{
+    display: grid;
+    grid-template-columns: auto auto auto;
+    padding: 10px;
+    padding-right: 30px;
+    width: 40%;
+    float: left;
+}
+
+.grid-container2 {
+    display: grid;
+    grid-template-columns: auto auto;
+    padding: 10px;
+    width: 30%;
+    float: left;
+}
+
+.grid-item{
+    font-size: 20px;
+}
+
+.grid-item:hover {
+    color: #ffffff !important;
+    background-color: #80807f !important
+}
+
+.number-text {
+    text-align: center;
+    font-weight: bold;
+    font-size: 24px;
+}
