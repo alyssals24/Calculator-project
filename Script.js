@@ -1,5 +1,7 @@
 let currentinput = '';
 let currentsentence = document.createElement('p');
+
+// if the '1' button is clicked, add '1' to the current input and display it
 function input1() {
     currentinput = currentinput + '1';
     updatesentence();
@@ -70,49 +72,37 @@ function inputdivide() {
     updatesentence();
 }
 
-function updateDisplay(value) {
-    document.getElementById("numberoutput")
-}
+// removes the last number or sign from the current input
 function deleteprev() {
     currentinput = currentinput.slice(0,-1);
     updatesentence();
 }
 
+// removes everything from the current input
 function clearnum() {
     currentinput = '';
     updatesentence();
 }
 
+// when the '=' button is clicked, calulate the answer and display it
 function inputequal() {
     let answer = currentinput[0];
-    console.log(currentinput);
     answer = calculateanswer();
     const answerpara = document.createElement('p');
     answerpara.innerHTML = '= ' + answer.toString();
-    //answerpara.setAttribute("font-size", "24");
-    //answerpara.setAttribute("font-weight", "bold");
-    //answerpara.setAttribute("text-align", "center");
     document.getElementById('numberoutput').appendChild(answerpara);
     currentinput = '';
 
 }
 
+// calculates the answer and reutrns it
 function calculateanswer() {
     let answer = 0;
-    if (currentinput[1] == '+') {
-        answer = currentinput[0] + currentinput[2];
-    } else if (currentinput[1] == '-') {
-        answer = currentinput[0] - currentinput[2];
-    } else if (currentinput[1] == 'x') {
-        answer = currentinput[0] * currentinput[2];
-    } else {
-        answer = currentinput[0] / currentinput[2];
-    }
     answer = math.evaluate(currentinput);
-    console.log(answer);
     return answer;
 }
 
+// updates the current equation input and displays it
 function updatesentence() {
     let numout = document.getElementById('numberoutput');
     let sentence = '';
@@ -120,16 +110,12 @@ function updatesentence() {
         numout.removeChild(numout.firstChild);
     }
     for (let i = 0; i < currentinput.length; i++) {
-        if (currentinput[i] == '*') {
-            sentence = sentence + 'X '
+        if (currentinput[i] == '*') { // if 'times' is inputted, display 'x' instead of '*'
+            sentence = sentence + 'x '
         } else {
             sentence = sentence + currentinput[i] + ' ';
         }
     }
     currentsentence.innerHTML = sentence;
     numout.appendChild(currentsentence);
-}
-
-function display(val) {
-
 }
